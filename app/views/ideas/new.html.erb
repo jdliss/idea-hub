@@ -1,0 +1,6 @@
+<%= form_for([@user, @idea]) do |f| %>
+  <%= f.text_field :title, placeholder: "Title" %> 
+  <%= f.text_field :description, placeholder: "Description" %>
+  <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
+  <%= f.submit %>
+<% end %>

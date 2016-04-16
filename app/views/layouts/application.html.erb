@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IdeaGroup</title>
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="#3949ab indigo darken-1">
+      <div class="nav-wrapper">
+        <!-- <a href="/ideas" class="brand-logo">IDEA HUB</a> -->
+        <%= link_to "IDEA HUB", ideas_path, { class: "brand-logo"} %>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if current_user %>
+            <%= link_to "\"I HAVE AN IDEA!\"", new_user_idea_path(current_user) %>
+            <%= link_to "Create Category", new_admin_category_path %>
+            <%= link_to "Log Out", logout_path, method: "delete" %>
+          <% else %>
+            <%= link_to "Register New User", new_user_path  %>
+            <%= link_to "Log In", login_path %>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  </body>
+</html>
