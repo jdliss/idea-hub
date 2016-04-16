@@ -6,7 +6,11 @@ module SpecHelper
   end
 
   def login_user
-    user = User.create(username: "jdliss", email: "email", password: "password")
+    user = User.create(username: "jdliss",
+                       email: "email",
+                       password: "password",
+                       role: 0
+                       )
 
     ApplicationController.any_instance.stubs(:current_user).returns(user)
   end

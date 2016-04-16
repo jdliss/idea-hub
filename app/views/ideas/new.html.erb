@@ -1,6 +1,12 @@
+<h1 class="center">New Idea</h1>
+
 <%= form_for([@user, @idea]) do |f| %>
-  <%= f.text_field :title, placeholder: "Title" %> 
+  <%= f.text_field :title, placeholder: "Title" %>
   <%= f.text_field :description, placeholder: "Description" %>
   <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
   <%= f.submit %>
 <% end %>
+
+<script>$(document).ready(function() {
+    $('select').material_select();
+});</script>

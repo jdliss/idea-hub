@@ -1,17 +1,13 @@
 <div class="container">
-
   <h1 class="center">Idea Hub</h1>
-
   <% @ideas.each do |idea| %>
     <div class="container">
-
       <div class="card">
         <div class="card-image">
-          <img src="<%= idea.image %>" width="250" height="250" algorithm="fill_proportional">
-          <span class="card-title"><%= idea.title %></span>
+          <img src="<%= idea.image %>">
         </div>
         <div class="card-content">
-          <p><%= idea.description %></p>
+          <h5><%= idea.title %></h5>
         </div>
         <div class="card-action">
           <%= link_to "Show", idea_path(idea) %>
@@ -19,5 +15,4 @@
       </div>
     </div>
   <% end %>
-
 </div>

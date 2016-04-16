@@ -1,5 +1,5 @@
-
 require 'rails_helper'
+
 RSpec.feature "logged in admin can create categories" do
   include SpecHelper
 
@@ -7,6 +7,8 @@ RSpec.feature "logged in admin can create categories" do
     scenario "they see the categories index with links to category show pages" do
 
       create_and_log_in_admin
+
+      visit ideas_path
 
       click_on "Create Category"
       within 'form' do
@@ -25,27 +27,27 @@ RSpec.feature "logged in admin can create categories" do
     end
   end
 
-  xcontext "as a valid admin, without a entering a name" do
+  context "as a valid admin, without a entering a name" do
     scenario "they cannot create a category" do
       create_and_log_in_admin
+
+      visit ideas_path
 
       click_on "Create Category"
 
       within 'form' do
-        click_on "Submit"
+        click_on "Create"
       end
-
-      expect(current_path).to eq new_category_path
 
       expect(page).to have_content "Name can't be blank"
     end
   end
 
-  xcontext "as a default user" do
+  context "as a default user" do
     scenario "they see a 404 page" do
-      create_and_log_in_user
+      login_user
 
-      visit new_category_path
+      visit new_admin_category_path
 
       expect(page).to have_content "The page you were looking for doesn't exist"
       expect(page).to_not have_content "Create a New Category"
