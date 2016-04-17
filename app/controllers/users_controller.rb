@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def ideas
-    @ideas = current_user.ideas
+    @ideas = User.find(params[:user_id]).ideas
   end
 
   private

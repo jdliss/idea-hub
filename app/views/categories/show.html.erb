@@ -1,5 +1,7 @@
 <h1><%= @category.name %></h1>
 
+<%= link_to "Delete", category_path(@category), method: "delete" %>
+
 <% @category.ideas.each do |idea| %>
   <%= link_to idea.title, idea_path(idea) %>
 <% end %>

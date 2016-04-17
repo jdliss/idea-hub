@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :categories
   end
 
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index, :show, :destroy]
 
   resources :ideas
 end
