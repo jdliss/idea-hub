@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160416174236) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
+    t.text     "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160416174236) do
   create_table "ideas", force: :cascade do |t|
     t.text     "title"
     t.text     "description"
+    t.text     "image"
     t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at",  null: false

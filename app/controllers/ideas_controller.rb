@@ -3,7 +3,11 @@ class IdeasController < ApplicationController
   end
 
   def index
-    @ideas = Idea.all
+    ideas = Idea.all
+    @ideas = [ideas.take(ideas.length/3),
+              ideas.drop(ideas.length/3).take(ideas.length/3),
+              ideas.drop(ideas.length/3).drop(ideas.length/3)
+            ]
   end
 
   def new
@@ -19,8 +23,10 @@ class IdeasController < ApplicationController
     @user = current_user
     @idea = @user.ideas.new(idea_params)
     if @idea.save
+      flash[:notice] = "Idea created!"
       redirect_to idea_path(@idea)
     else
+      flash[:error] = "Title can't be blank!"
       render :new
     end
   end

@@ -1,6 +1,7 @@
 <h1><%= @category.name %></h1>
-
-<%= link_to "Delete", category_path(@category), method: "delete" %>
+<% if current_user && current_user.admin? %>
+  <%= link_to "Delete", category_path(@category), method: "delete" %>
+<% end %>
 
 <% @category.ideas.each do |idea| %>
   <%= link_to idea.title, idea_path(idea) %>

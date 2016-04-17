@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+.padded-left {
+  padding-left: 20px;
+}
+
+.footer {
+  padding-bottom: 60px;
+}
+
+.footer-small {
+  padding-bottom: 10px;
+}
+
+img {
+  max-width: 500px;
+  width: auto;
+  height: auto;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 200px; /* bottom = footer height */
+}
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 200px;
+    width: 100%;
+}
