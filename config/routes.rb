@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show]
-  
+
   resources :ideas
 end

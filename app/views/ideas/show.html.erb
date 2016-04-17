@@ -1,3 +1,6 @@
 <h1><%= @idea.title %></h1>
 <%= image_tag @idea.image, id: "idea_image" %>
-<p><%= @idea.description %></p>
+<p><%= @idea.description %></p><br />
+<% if current_user.admin? || (current_user && current_user == @idea.user) %>
+  <%= link_to "Delete", idea_path(@idea), method: "delete" %>
+<% end %>
