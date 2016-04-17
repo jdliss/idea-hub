@@ -61,5 +61,6 @@ RSpec.feature "they try to delete their own idea" do
 
       expect(current_path).to eq user_ideas_path(User.first)
       expect(page).to_not have_content "Bad"
+    end
   end
 end
