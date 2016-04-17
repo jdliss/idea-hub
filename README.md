@@ -1,4 +1,4 @@
-[heroku](nameless-escarpment-23229.herokuapp.com)
+[heroku](http://nameless-escarpment-23229.herokuapp.com)
 
 == README
 
