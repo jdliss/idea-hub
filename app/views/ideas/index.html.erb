@@ -1,31 +1,6 @@
-<!-- <div class="container">
-  <h1 class="center">IdeaHub</h1>
-  <div class="row">
-    <% @ideas.each do |i| %>
-      <div class="col s4">
-        <% i.each do |idea| %>
-          <div class="container">
-            <div class="card">
-              <div class="card-image">
-                <img src="<%= idea.image %>">
-              </div>
-              <div class="card-content">
-                <h5><%= idea.title %></h5>
-              </div>
-              <div class="card-action">
-                <%= link_to "Show", idea_path(idea) %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div> -->
-
 <div class="container">
 
-<h1>Everybody's Great Ideas</h1>
+<h1 class="center">IdeaHub</h1>
 
 <div class="row">
 <% @ideas.each do |idea| %>
