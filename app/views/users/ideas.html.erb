@@ -1,18 +1,20 @@
 <div class="container">
-  <h1 class="center">Your Ideas</h1>
-</div>
-<% @ideas.each do |idea| %>
   <div class="container">
-    <div class="card">
-      <div class="card-image">
-        <img src="<%= idea.image %>">
-      </div>
-      <div class="card-content">
-        <h5><%= idea.title %></h5>
-      </div>
-      <div class="card-action">
-        <%= link_to "Show", idea_path(idea) %>
+    <h1 class="center">Your Ideas</h1>
+  </div>
+  <% @ideas.each do |idea| %>
+    <div class="container">
+      <div class="card">
+        <div class="card-image">
+          <img src="<%= idea.image %>">
+        </div>
+        <div class="card-content">
+          <h5><%= idea.title %></h5>
+        </div>
+        <div class="card-action">
+          <%= link_to "Show", idea_path(idea) %>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

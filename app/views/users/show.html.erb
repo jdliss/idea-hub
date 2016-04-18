@@ -1,8 +1,8 @@
-<h1><%= @user.username %>'s Dashboard</h1>
+<div class="container">
+  <h1><%= @user.username %>'s Dashboard</h1>
+  <p>Score: <%= @user.score %></p>
 
-<p>Score: <%= @user.score %></p>
-
-<%= link_to "All Ideas", ideas_path  %>
-<%= link_to "New Idea", new_user_idea_path(@user) %>
-<%= link_to "Your Ideas", user_ideas_path(@user)  %>
-
+  <%= link_to "All Ideas", ideas_path  %>
+  <%= link_to "New Idea", new_user_idea_path(@user) %>
+  <%= link_to "Your Ideas", user_ideas_path(@user)  %>
+</div>
