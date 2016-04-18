@@ -4,7 +4,6 @@ class Idea < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   validates_presence_of :title
-
   after_initialize :init
 
   def init

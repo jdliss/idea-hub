@@ -1,1 +1,19 @@
-<h1>welcome page coming soon to a heroku app near you</h1>
+<div class="parallax-container">
+  <div class="parallax"><%= image_tag "pen.jpg", class: "welcome" %></div>
+</div>
+<div class="section white">
+  <div class="row container">
+    <h2 class="header">Welcome To IdeaHub</h2>
+    <p class="grey-text text-darken-3 lighten-3">IdeaHub is a friendly place to share ideas about anything! Enjoy using IdeaHub to get and give ideas! Images are automatically generated to support your ideas when you make them. Have fun!</p>
+    <%= link_to "Get Started!", ideas_path, { class: "btn" } %>
+  </div>
+</div>
+<div class="parallax-container">
+  <div class="parallax"><%= image_tag "bulbs.jpg", class: "welcome" %></div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+</script>

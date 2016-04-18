@@ -4,16 +4,19 @@
     <title>IdeaHub</title>
      <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+     <!-- Material Icons -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav class="#3949ab indigo darken-1">
+    <div class="navbar-fixed">
+    <nav class="#3949ab indigo darken-1 z-depth-2">
       <div class="nav-wrapper">
         <div class="padded-left">
-          <%= link_to "IDEA HUB", ideas_path, { class: "brand-logo"} %>
+          <%= link_to "IdeaHub", ideas_path, { class: "brand-logo"} %>
         </div>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_user %>
@@ -30,7 +33,8 @@
         </ul>
       </div>
     </nav>
-    <div class="container footer center">
+  </div>
+    <div class="footer center">
       <% flash.each do |type, message| %>
           <script>
             $(function() {
@@ -48,7 +52,7 @@
             <p class="grey-text text-lighten-4">IdeaHub is a friendly place to share ideas about anything.  Enjoy using IdeaHub to get and give Ideas!  Images are automatically generated to support your ideas when you make them. Have fun!</p>
           </div>
           <div class="col l4 offset-l2 s12">
-            <a class='dropdown-button btn waves-effect default' href='#' data-activates='dropdown2'>Resources</a>
+            <a class='dropdown-button btn-floating btn-large btn waves-effect default' href='#' data-activates='dropdown2'><i class="material-icons">add</i></a>
               <ul id='dropdown2' class='dropdown-content'>
                 <li><%= link_to "Github Repo  ", "https://github.com/jdliss/idea-hub" %></li>
                 <li><%= link_to "Rails", "http://rubyonrails.org/" %></li>

@@ -3,11 +3,11 @@ class IdeasController < ApplicationController
   end
 
   def index
-    ideas = Idea.all
-    @ideas = [ideas.take(ideas.length/3),
-              ideas.drop(ideas.length/3).take(ideas.length/3),
-              ideas.drop(ideas.length/3).drop(ideas.length/3)
-            ]
+    @ideas = Idea.all
+    # ideas = [ideas.take(ideas.length/3),
+    #           ideas.drop(ideas.length/3).take(ideas.length/3),
+    #           ideas.drop(ideas.length/3).drop(ideas.length/3)
+    #         ]
   end
 
   def new
