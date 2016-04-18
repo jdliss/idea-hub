@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+// $( document ).ready(function() {
+//   $(".show-material-message").each(function(){
+//     Materialize.toast($(this).data('message'), 5000....
+//   });
+// });

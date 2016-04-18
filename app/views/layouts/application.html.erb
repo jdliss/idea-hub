@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IdeaGroup</title>
+    <title>IdeaHub</title>
      <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
@@ -12,15 +12,17 @@
   <body>
     <nav class="#3949ab indigo darken-1">
       <div class="nav-wrapper">
-        <!-- <a href="/ideas" class="brand-logo">IDEA HUB</a> -->
-        <%= link_to "IDEA HUB", ideas_path, { class: "brand-logo logo"} %>
+        <div class="padded-left">
+          <%= link_to "IDEA HUB", ideas_path, { class: "brand-logo"} %>
+        </div>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_user %>
             <%= link_to "I HAVE AN IDEA!", new_user_idea_path(current_user) %>
+            <%= link_to "Categories", categories_path %>
             <% if current_user.admin? %>
               <%= link_to "Create Category", new_admin_category_path %>
             <% end %>
-            <%= link_to "Log Out", logout_path, method: "delete" %>
+            <%= link_to "Log Out (#{current_user.username})", logout_path, method: "delete" %>
           <% else %>
             <%= link_to "Register New User", new_user_path  %>
             <%= link_to "Log In", login_path %>
@@ -28,14 +30,34 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
-      <div class="flash_message">
-        <% flash.each do |type, message| %>
-        <%= content_tag :div, message, class: "flash_#{type}" %>
-        <% end %>
-      </div>
+    <div class="container footer center">
+      <% flash.each do |type, message| %>
+          <script>
+            $(function() {
+              Materialize.toast('<%= message %>', 2500);
+            });
+          </script>
+      <% end %>
       <%= yield %>
     </div>
+    <footer class="#3949ab indigo darken-1 page-footer footer-small">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">IdeaHub</h5>
+            <p class="grey-text text-lighten-4">IdeaHub is a friendly place to share ideas about anything.  Enjoy using IdeaHub to get and give Ideas!  Images are automatically generated to support your ideas when you make them. Have fun!</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <a class='dropdown-button btn waves-effect default' href='#' data-activates='dropdown2'>Resources</a>
+              <ul id='dropdown2' class='dropdown-content'>
+                <li><%= link_to "Github Repo  ", "https://github.com/jdliss/idea-hub" %></li>
+                <li><%= link_to "Rails", "http://rubyonrails.org/" %></li>
+                <li><%= link_to "Materialize", "http://materializecss.com" %></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   </body>

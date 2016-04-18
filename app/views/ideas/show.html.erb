@@ -1,6 +1,11 @@
-<h1><%= @idea.title %></h1>
-<%= image_tag @idea.image, id: "idea_image" %>
-<p><%= @idea.description %></p><br />
-<% if current_user.admin? || (current_user && current_user == @idea.user) %>
-  <%= link_to "Delete", idea_path(@idea), method: "delete" %>
-<% end %>
+<div class="center">
+  <h1><%= @idea.title %></h1>
+  <%= image_tag @idea.image, id: "idea_image" %><br /><br /><br />
+  <p><%= @idea.description %></p><br />
+  <% if (current_user && current_user.admin?) || (current_user && current_user == @idea.user) %>
+    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Options</a>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><%= link_to "Delete", idea_path(@idea), method: "delete" %></li>
+      </ul>
+  <% end %>
+</div>

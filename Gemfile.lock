@@ -71,6 +71,8 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
+    faker (1.6.3)
+      i18n (~> 0.5)
     fastimage (2.0.0)
       addressable (~> 2)
     fotofetch (1.1.2)
@@ -209,6 +211,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
+  faker
   fotofetch
   jbuilder (~> 2.0)
   jquery-rails

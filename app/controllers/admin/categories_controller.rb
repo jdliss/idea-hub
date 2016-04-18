@@ -9,7 +9,7 @@ class Admin::CategoriesController < Admin::BaseController
       flash[:notice] = "Category created!"
       redirect_to categories_path
     else
-      flash.now[:error] = "Name can't be blank"
+      flash.now[:error] = "Name can't be blank!"
       render :new
     end
   end

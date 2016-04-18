@@ -3,6 +3,7 @@ class CreateIdeas < ActiveRecord::Migration
     create_table :ideas do |t|
       t.text :title
       t.text :description
+      t.text :image
       t.references :user, index: true, foreign_key: true
       t.references :category, index: true, foreign_key: true
 

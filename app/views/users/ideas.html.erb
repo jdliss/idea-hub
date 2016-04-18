@@ -6,10 +6,9 @@
     <div class="card">
       <div class="card-image">
         <img src="<%= idea.image %>">
-        <span class="card-title"><%= idea.title %></span>
       </div>
       <div class="card-content">
-        <p><%= idea.description %></p>
+        <h5><%= idea.title %></h5>
       </div>
       <div class="card-action">
         <%= link_to "Show", idea_path(idea) %>
